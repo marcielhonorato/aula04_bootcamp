@@ -1,13 +1,19 @@
 # Exercício 1: Crie uma lista com os números de 1 a 10 e use um loop para imprimir cada número elevado ao quadrado.
 
-lista_numero = []
+    # lista_numero = []
 
-for num in range(1,11):
-    num_quadrado = num**2
-    lista_numero.append(num_quadrado)
-print(lista_numero)
+    # for num in range(1,11):
+    #     num_quadrado = num**2
+    #     lista_numero.append(num_quadrado)
+    # print(lista_numero)
 
 # Exercício 2: Dada a lista ["Python", "Java", "C++", "JavaScript"], remova o item "C++" e adicione "Ruby".
+
+lista = ["Python", "Java", "C++", "JavaScript"]
+lista.remove("C++")
+lista.append("Ruby")
+
+print(lista)
 
 # Exercício 3: Crie um dicionário para armazenar informações de um livro, incluindo título, autor e ano de publicação. Imprima cada informação.
 
