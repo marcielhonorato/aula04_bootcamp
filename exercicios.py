@@ -30,15 +30,17 @@
 
 # Exercício 4: Escreva um programa que conta o número de ocorrências de cada caractere em uma string usando um dicionário.
 
-def contar_caracteres (s):
-    contagem = {}
-    for caracetere in s:
-        contagem[caracetere] = contagem.get(caracetere, 0) + 1
-    return contagem
+    # def contar_caracteres (s):
+    #     contagem = {}
+    #     for caracetere in s:
+    #         contagem[caracetere] = contagem.get(caracetere, 0) + 1
+    #     return contagem
 
-print(contar_caracteres("Python, jornada de dados, hello world" ))
-
-
-
+    # print(contar_caracteres("Python, jornada de dados, hello world" ))
 
 # Exercício 5: Dada a lista ["maçã", "banana", "cereja"] e o dicionário {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}, calcule o preço total da lista de compras.
+
+lista_compra =  ["cereja", "banana", "maçã",]
+precos = {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}
+total_compra = sum([precos[item] for item in lista_compra])
+print(total_compra)
