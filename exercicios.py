@@ -17,17 +17,28 @@
 
 # Exercício 3: Crie um dicionário para armazenar informações de um livro, incluindo título, autor e ano de publicação. Imprima cada informação.
 
-from typing import Dict, Any 
+    # from typing import Dict, Any 
 
-livro: dict ={
-    "Titulo":"Game of Thrones",
-    "Autor":"Estagiario",
-    "Ano": 2005
-}
+    # livro: dict ={
+    #     "Titulo":"Game of Thrones",
+    #     "Autor":"Estagiario",
+    #     "Ano": 2005
+    # }
 
-for chave, valor in livro.items():
-    print(f"{chave}: {valor}")
+    # for chave, valor in livro.items():
+    #     print(f"{chave}: {valor}")
 
 # Exercício 4: Escreva um programa que conta o número de ocorrências de cada caractere em uma string usando um dicionário.
+
+def contar_caracteres (s):
+    contagem = {}
+    for caracetere in s:
+        contagem[caracetere] = contagem.get(caracetere, 0) + 1
+    return contagem
+
+print(contar_caracteres("Python, jornada de dados, hello world" ))
+
+
+
 
 # Exercício 5: Dada a lista ["maçã", "banana", "cereja"] e o dicionário {"maçã": 0.45, "banana": 0.30, "cereja": 0.65}, calcule o preço total da lista de compras.
