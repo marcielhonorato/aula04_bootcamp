@@ -48,13 +48,19 @@
 # 6. Eliminação de Duplicatas
 # Objetivo: Dada uma lista de emails, remover todos os duplicados.
 
-emails = ["user@example.com", "admin@example.com", "user@example.com", "manager@example.com"]
-emails_unicos = list(set(emails))
+    # emails = ["user@example.com", "admin@example.com", "user@example.com", "manager@example.com"]
+    # emails_unicos = list(set(emails))
 
-print(emails_unicos)
+    # print(emails_unicos)
 
 # 7. Filtragem de Dados
 # Objetivo: Dada uma lista de idades, filtrar apenas aquelas que são maiores ou iguais a 18.
+
+idades = [22, 15, 30, 17, 18]
+idades_validas = [idade for idade in idades if idade >= 18]
+
+print(idades_validas)
+
 
 # 8. Ordenação Personalizada
 # Objetivo: Dada uma lista de dicionários representando pessoas, ordená-las pelo nome.
