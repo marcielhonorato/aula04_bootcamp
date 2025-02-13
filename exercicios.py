@@ -64,18 +64,22 @@
 # 8. Ordenação Personalizada
 # Objetivo: Dada uma lista de dicionários representando pessoas, ordená-las pelo nome.
 
-pessoas = [
-    {"nome": "Alice", "idade": 30},
-    {"nome": "Bob", "idade": 25},
-    {"nome": "Carol", "idade": 20}
-]
+    # pessoas = [
+    #     {"nome": "Alice", "idade": 30},
+    #     {"nome": "Bob", "idade": 25},
+    #     {"nome": "Carol", "idade": 20}
+    # ]
+    # pessoas.sort(key=lambda pessoa : pessoa["nome"])
 
-pessoas.sort(key=lambda pessoa : pessoa["nome"])
-
-print(pessoas)
+    # print(pessoas)
 
 # 9. Agregação de Dados
 # Objetivo: Dado um conjunto de números, calcular a média.
+
+numeros = [10, 20, 30, 40, 50]
+media = sum(numeros) / len(numeros)
+
+print(f"Média: {media}")
 
 # 10. Divisão de Dados em Grupos
 # Objetivo: Dada uma lista de valores, dividir em duas listas: uma para valores pares e outra para ímpares.
