@@ -137,13 +137,41 @@
 # 15. Contagem de Frequência de Itens
 # Objetivo: Dada uma string, contar a frequência de cada caractere usando um dicionário.
 
-texto = "engenharia de dados"
+        # texto = "engenharia de dados"
 
-contador_carecetere = {}
+        # contador_carecetere = {}
 
-for caracatere in texto:
-    if caracatere in contador_carecetere:
-       contador_carecetere[caracatere] += 1
-    else:
-       contador_carecetere[caracatere] = 1
-print(contador_carecetere)
+        # for caracatere in texto:
+        #     if caracatere in contador_carecetere:
+        #        contador_carecetere[caracatere] += 1
+        #     else:
+        #        contador_carecetere[caracatere] = 1
+        # print(contador_carecetere)
+
+    # estado = dict()
+    # brasil = list()
+
+    # for c in range(0,3):
+    #     estado["uf"] = str(input("Unidade Federativa: "))
+    #     estado["sigla"] = str(input("Sigla: "))
+    #     brasil.append(estado.copy())
+        
+    # print()
+    # for e in brasil:
+    #     for v in e.values():
+    #         print(v, end=' ')
+    #     print()
+
+# 16.Crie um programa que tenha uma tupla totalmente preenchida com uma contagem por extenso, de zero até 20. Seu programa deverá ler um numero 
+# pelo teclado(entre 0 a 20) e mostrá-lo por extenso.
+
+numero_extenso = ('zero' ,'um' ,'dois' ,'três' ,'quatro' ,'cinco' ,'seis' ,'sete' ,'oito' ,'nove' ,'dez' ,'onze' ,'doze' ,'treze' ,'quatorze' ,'quinze' ,'dezesseis' ,'dezessete' ,'dezoito' ,'dezenove' ,'vinte')
+
+num_dig = int(input("Digite um número entre 0 e 20: "))
+
+while num_dig < 0 or num_dig > 20:
+    num_dig = int(input("Tentente novamente. Digite um número entre 0 e 20: "))
+for num_e in range(num_dig, len(numero_extenso)):
+       num_ext_digitado = (numero_extenso[num_e])
+       break
+print(f"Você digitou o numero {num_ext_digitado}")
