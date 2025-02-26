@@ -181,16 +181,29 @@
 #C) Uma lista com os times em ordem alfabética 
 #D) Em que posição está um determinado time
 
-brasileirao = ('Botafogo' ,'Palmeiras' ,'Flamengo' ,'Fortaleza' ,'Internacional' ,'São Paulo' ,'Corinthians' 
-               ,'Bahia' ,'Cruzeiro','Vasco' ,'Vitória' ,'Atlético Mineiro' ,'Fluminense','Grêmio' ,'Juventude' 
-               ,'Red Bull Bragantino' ,'Athletico Paranaense' ,'Criciúma' ,'Atlético Goianiense' ,'Cuiabá')
-print("-=" * 60)
-print(f"Lista de times do Brasileirão: {brasileirao}")
-print("-=" * 60)
-print(f"Os 5 primeiros são: {brasileirao[0:5]}")
-print("-=" * 60)
-print(f"Os 4 últimos são: {brasileirao[-4:]}")
-print("-=" * 60)
-print(f"Times em ordem alfabética: {sorted(brasileirao)}")
-print("-=" * 60)
-print(f"O Flamengo esta na {brasileirao.index("Flamengo") + 1}ª posição da tabela")
+    # brasileirao = ('Botafogo' ,'Palmeiras' ,'Flamengo' ,'Fortaleza' ,'Internacional' ,'São Paulo' ,'Corinthians' 
+    #                ,'Bahia' ,'Cruzeiro','Vasco' ,'Vitória' ,'Atlético Mineiro' ,'Fluminense','Grêmio' ,'Juventude' 
+    #                ,'Red Bull Bragantino' ,'Athletico Paranaense' ,'Criciúma' ,'Atlético Goianiense' ,'Cuiabá')
+    # print("-=" * 60)
+    # print(f"Lista de times do Brasileirão: {brasileirao}")
+    # print("-=" * 60)
+    # print(f"Os 5 primeiros são: {brasileirao[0:5]}")
+    # print("-=" * 60)
+    # print(f"Os 4 últimos são: {brasileirao[-4:]}")
+    # print("-=" * 60)
+    # print(f"Times em ordem alfabética: {sorted(brasileirao)}")
+    # print("-=" * 60)
+    # print(f"O Flamengo esta na {brasileirao.index("Flamengo") + 1}ª posição da tabela")
+
+# 18 Crie um programa que vai gerar cinco números aleatórios e colocar em uma tupla. Depois disso, mostre a listagem de números gerados 
+# e também indique o menor e o maior valor que estão na tupla
+
+from random import randint
+
+numeros = (randint(1, 10),randint(1, 10),randint(1, 10),randint(1, 10),randint(1, 10))
+
+print(f'Os valores sorteados foram: ', end='')
+for num in numeros:
+    print(f'{num}', end=' ')
+print(f"\nO maior valor sorteado foi {max(numeros)}")
+print(f"O menor valor sorteado foi {min(numeros)}")
