@@ -173,36 +173,3 @@ while True:
         print(f"Você digitou o número: {numero_extenso[num_dig]}")
         break
     print("Tente Novamente.", end='')
-
-# 17.Crie uma tupla preenchida com os 20 primeiro colocados da Tabela do Campeonato Brasileiro de Futebol, na ordem de colocação.Depois mostre
-#A) - Apenas os 5 primeiro colocados, 
-#B) Os útilmos 4 colocadod da tabela 
-#C) Uma lista com os times em ordem alfabética 
-#D) Em que posição está um determinado time
-
-    # brasileirao = ('Botafogo' ,'Palmeiras' ,'Flamengo' ,'Fortaleza' ,'Internacional' ,'São Paulo' ,'Corinthians' ,'Bahia' ,'Cruzeiro' ,'Vasco' ,'Vitória' ,'Atlético Mineiro' ,'Fluminense' ,'Grêmio' ,'Juventude' ,'Red Bull Bragantino' ,'Athletico Paranaense' ,'Criciúma' ,'Atlético Goianiense' ,'Cuiabá')
-
-    # print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=")
-    # print(f"Lista de times do Brasileirão: {brasileirao}")
-    # print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=")
-    # print(f"Os 5 primeiros são: {brasileirao[:6]}")
-    # print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=")
-    # print(f"Os 4 últimos são: {brasileirao[16:]}")
-    # print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=")
-    # print(f"Times em ordem alfabética: {sorted(brasileirao)}")
-    # print("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=")
-    # print(f"O Flamengo esta na {2 + 1}ª posição da tabela")
-
-# 18 Crie um programa que vai gerar cinco números aleatórios e colocar em uma tupla. Depois disso, mostre a listagem de números gerados 
-# e também indique o menor e o maior valor que estão na tupla
-
-import random
-
-numeros_aleatorios = []
-
-for num in range(0,5):
-    result = random.randint(0,10)
-    numeros_aleatorios.append(result)
-print(f"O valores sorteados foram: {tuple(numeros_aleatorios)}")
-print(f"O maior valor sorteado foi {max(numeros_aleatorios)}")
-print(f"O menor valor sorteado foi {min(numeros_aleatorios)}")
