@@ -165,11 +165,32 @@
 # 16.Crie um programa que tenha uma tupla totalmente preenchida com uma contagem por extenso, de zero até 20. Seu programa deverá ler um numero 
 # pelo teclado(entre 0 a 20) e mostrá-lo por extenso.
 
-numero_extenso = ('zero' ,'um' ,'dois' ,'três' ,'quatro' ,'cinco' ,'seis' ,'sete' ,'oito' ,'nove' ,'dez' ,'onze' ,'doze' ,'treze' ,'quatorze' ,'quinze' ,'dezesseis' ,'dezessete' ,'dezoito' ,'dezenove' ,'vinte')
+    # numero_extenso = ('zero' ,'um' ,'dois' ,'três' ,'quatro' ,'cinco' ,'seis' ,'sete' ,'oito' ,'nove' ,'dez' ,'onze' ,'doze' ,'treze' ,'quatorze' ,'quinze' ,'dezesseis' ,'dezessete' ,'dezoito' ,'dezenove' ,'vinte')
 
-while True:
-    num_dig = int(input("Digite um número entre 0 e 20: "))
-    if  0 <= num_dig <= 20:
-        print(f"Você digitou o número: {numero_extenso[num_dig]}")
-        break
-    print("Tente Novamente.", end='')
+    # while True:
+    #     num_dig = int(input("Digite um número entre 0 e 20: "))
+    #     if  0 <= num_dig <= 20:
+    #         print(f"Você digitou o número: {numero_extenso[num_dig]}")
+    #         break
+    #     print("Tente Novamente.", end='')
+
+
+# 17.Crie uma tupla preenchida com os 20 primeiro colocados da Tabela do Campeonato Brasileiro de Futebol, na ordem de colocação.Depois mostre
+#A) - Apenas os 5 primeiro colocados, 
+#B) Os útilmos 4 colocadod da tabela 
+#C) Uma lista com os times em ordem alfabética 
+#D) Em que posição está um determinado time
+
+brasileirao = ('Botafogo' ,'Palmeiras' ,'Flamengo' ,'Fortaleza' ,'Internacional' ,'São Paulo' ,'Corinthians' 
+               ,'Bahia' ,'Cruzeiro','Vasco' ,'Vitória' ,'Atlético Mineiro' ,'Fluminense','Grêmio' ,'Juventude' 
+               ,'Red Bull Bragantino' ,'Athletico Paranaense' ,'Criciúma' ,'Atlético Goianiense' ,'Cuiabá')
+print("-=" * 60)
+print(f"Lista de times do Brasileirão: {brasileirao}")
+print("-=" * 60)
+print(f"Os 5 primeiros são: {brasileirao[0:5]}")
+print("-=" * 60)
+print(f"Os 4 últimos são: {brasileirao[-4:]}")
+print("-=" * 60)
+print(f"Times em ordem alfabética: {sorted(brasileirao)}")
+print("-=" * 60)
+print(f"O Flamengo esta na {brasileirao.index("Flamengo") + 1}ª posição da tabela")
