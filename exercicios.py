@@ -240,16 +240,17 @@ produtos = ("Pc Desktop", 1900,
             "Placa de Video GTX 4060", 3200,
             "Modem TP LINK" , 255,
             "Fone de Ouvido" , 79.90,
-            "Placa Mães AM5" , 799 
+            "Placa Mães AM5" , 799, 
+            "Computador Ryzen 7 7700x", 8000
             )
 
-print('--' * 25)
-print("     LISTAGEM DE PRODUTOS E PREÇOS       ")
-print('--' * 25)
+print('-=' * 30)
+print(f'{"LISTAGEM DE PRODUTOS E PREÇOS":^60}')
+print('-=' * 30)
 
 for pos in range(0, len(produtos)):
     if pos % 2 == 0:
         print(f'{produtos[pos]:.<40}', end='')
     else:
         print(f'R${produtos[pos]:>10.2f}')
-print('--' * 25)
+print('--' * 30)
