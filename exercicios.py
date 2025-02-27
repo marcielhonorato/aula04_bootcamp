@@ -231,26 +231,35 @@
 # 20 Crie um programa que tenha uma tupla única com nomes de produtos e seus respctivos preços, na sequência. No final, 
 # mostre uma listagem de preços, organizando os dados em uma forma tabular
 
+    # produtos = ("Pc Desktop", 1900, 
+    #             "Mouse RTX", 445.90, 
+    #             "Teclado Mecânico", 699, 
+    #             "Impressora Epson", 1300,
+    #             "Headset GT500", 329.99, 
+    #             "Placa de Video GTX 4060", 3200,
+    #             "Modem TP LINK" , 255,
+    #             "Fone de Ouvido" , 79.90,
+    #             "Placa Mães AM5" , 799, 
+    #             "Computador Ryzen 7 7700x", 8000
+    #             )
 
-produtos = ("Pc Desktop", 1900, 
-            "Mouse RTX", 445.90, 
-            "Teclado Mecânico", 699, 
-            "Impressora Epson", 1300,
-            "Headset GT500", 329.99, 
-            "Placa de Video GTX 4060", 3200,
-            "Modem TP LINK" , 255,
-            "Fone de Ouvido" , 79.90,
-            "Placa Mães AM5" , 799, 
-            "Computador Ryzen 7 7700x", 8000
-            )
+    # print('-=' * 30)
+    # print(f'{"LISTAGEM DE PRODUTOS E PREÇOS":^60}')
+    # print('-=' * 30)
 
-print('-=' * 30)
-print(f'{"LISTAGEM DE PRODUTOS E PREÇOS":^60}')
-print('-=' * 30)
+    # for pos in range(0, len(produtos)):
+    #     if pos % 2 == 0:
+    #         print(f'{produtos[pos]:.<40}', end='')
+    #     else:
+    #         print(f'R${produtos[pos]:>10.2f}')
+    # print('--' * 30)
 
-for pos in range(0, len(produtos)):
-    if pos % 2 == 0:
-        print(f'{produtos[pos]:.<40}', end='')
-    else:
-        print(f'R${produtos[pos]:>10.2f}')
-print('--' * 30)
+# 21 Crie um programa que tenha uma tupla com várias palavras (não usar acentos). Depois disso, você deve mostrar, para cada palavra, quasi são suas vogais
+
+palavras = ('hoje', 'casa', 'python', 'progarama', 'computador', 'processador')
+
+for palavra in palavras:
+    print(f'\nNa palavra {palavra.upper()} temos ', end='')
+    for letra in palavra:
+        if letra.lower() in 'aeiou':
+            print(letra, end=' ')
