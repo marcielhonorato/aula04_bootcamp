@@ -213,17 +213,43 @@
 #B)Em que posição foi digitado o primeiro valor 3 
 #C)Quais foram os numeros pares
 
-numeros = (int(input("Digite um número: ")),int(input("Digite outro número: ")),int(input("Digite mais um número: ")),int(input("Digite o último um número: ")))
+    # numeros = (int(input("Digite um número: ")),int(input("Digite outro número: ")),int(input("Digite mais um número: ")),int(input("Digite o último um número: ")))
 
-cont_par = 0
+    # cont_par = 0
 
-print(f"Você digitou os valores: {numeros}")
-print(f"O valor 9 apareceu {numeros.count(9)} vezes")
-if 3 in numeros:
-    print(f"O valor 3 apareceu na {numeros.index(3) + 1}ª posição")
-else: 
-    print(f"O valor 3 não foi digitado")
-print(f"O valores pares digitados foram: ", end='')
-for n in numeros:
-    if n % 2 == 0:
-        print(n, end=' ')
+    # print(f"Você digitou os valores: {numeros}")
+    # print(f"O valor 9 apareceu {numeros.count(9)} vezes")
+    # if 3 in numeros:
+    #     print(f"O valor 3 apareceu na {numeros.index(3) + 1}ª posição")
+    # else: 
+    #     print(f"O valor 3 não foi digitado")
+    # print(f"O valores pares digitados foram: ", end='')
+    # for n in numeros:
+    #     if n % 2 == 0:
+    #         print(n, end=' ')
+
+# 20 Crie um programa que tenha uma tupla única com nomes de produtos e seus respctivos preços, na sequência. No final, 
+# mostre uma listagem de preços, organizando os dados em uma forma tabular
+
+
+produtos = ("Pc Desktop", 1900, 
+            "Mouse RTX", 445.90, 
+            "Teclado Mecânico", 699, 
+            "Impressora Epson", 1300,
+            "Headset GT500", 329.99, 
+            "Placa de Video GTX 4060", 3200,
+            "Modem TP LINK" , 255,
+            "Fone de Ouvido" , 79.90,
+            "Placa Mães AM5" , 799 
+            )
+
+print('--' * 25)
+print("     LISTAGEM DE PRODUTOS E PREÇOS       ")
+print('--' * 25)
+
+for pos in range(0, len(produtos)):
+    if pos % 2 == 0:
+        print(f'{produtos[pos]:.<40}', end='')
+    else:
+        print(f'R${produtos[pos]:>10.2f}')
+print('--' * 25)
