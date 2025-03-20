@@ -256,10 +256,50 @@
 
 # 21 Crie um programa que tenha uma tupla com várias palavras (não usar acentos). Depois disso, você deve mostrar, para cada palavra, quasi são suas vogais
 
-palavras = ('hoje', 'casa', 'python', 'progarama', 'computador', 'processador')
+# palavras = ('hoje', 'casa', 'python', 'progarama', 'computador', 'processador')
 
-for palavra in palavras:
-    print(f'\nNa palavra {palavra.upper()} temos ', end='')
-    for letra in palavra:
-        if letra.lower() in 'aeiou':
-            print(letra, end=' ')
+# for palavra in palavras:
+#     print(f'\nNa palavra {palavra.upper()} temos ', end='')
+#     for letra in palavra:
+#         if letra.lower() in 'aeiou':
+#             print(letra, end=' ')
+
+# 22 Faça um programa que leia 5 valores numéricos e guarde-os em uma lista. No final, 
+# mostre qual foi o maior e o menor valor digitado e as suas repectivas posições na lista
+
+# valores = []
+
+# for cont in range(0, 5):
+#     valores.append(int(input(f'Digite um valor para a posição {cont} : ')))
+
+# print('-=' * 30)    
+# print(f'Você digitou os valores {valores}')
+
+# print(f'O maior valor digitado foi {max(valores)}, nas posições ', end='')
+# for pos, num in enumerate(valores):
+#     if  num == max(valores):
+#         print(f'{pos}...', end='')   
+
+# print(f'\nO menor valor digitado foi {min(valores)}, nas posições ', end='')
+# for pos, num in enumerate(valores):
+#     if  num == min(valores):
+#         print(f'{pos}...', end='')  
+
+# 23 Crie um programa que o usuario possa digitar vários valores númericos e cadastre-os em uma lista. Caso o número já exista lá dentro, ele não será adicionado.
+# no final, serão exibidos todos os valores únicos digitado em ordem crescente.
+
+lista_numero = []
+
+while True:
+    numero = int(input("Digite um valor númerico: "))
+    if numero not in lista_numero:
+        lista_numero.append(numero)
+        print("Valor adicionado com sucesso...")
+    else:
+        print("Valor duplicado! Não será possivel adicioná-lo")
+    continuar = str(input("Deseja continuar (S/N): "))
+    if continuar in 'Nn':
+       break
+lista_numero.sort()
+print("-=" * 40)
+print(f"Você digitou os valores {lista_numero}")
