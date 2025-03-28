@@ -288,18 +288,40 @@
 # 23 Crie um programa que o usuario possa digitar vários valores númericos e cadastre-os em uma lista. Caso o número já exista lá dentro, ele não será adicionado.
 # no final, serão exibidos todos os valores únicos digitado em ordem crescente.
 
-lista_numero = []
+# lista_numero = []
 
-while True:
-    numero = int(input("Digite um valor númerico: "))
-    if numero not in lista_numero:
-        lista_numero.append(numero)
-        print("Valor adicionado com sucesso...")
+# while True:
+#     numero = int(input("Digite um valor númerico: "))
+#     if numero not in lista_numero:
+#         lista_numero.append(numero)
+#         print("Valor adicionado com sucesso...")
+#     else:
+#         print("Valor duplicado! Não será possivel adicioná-lo")
+#     continuar = str(input("Deseja continuar (S/N): "))
+#     if continuar in 'Nn':
+#        break
+# lista_numero.sort()
+# print("-=" * 40)
+# print(f"Você digitou os valores {lista_numero}")
+
+# 24 Crie um programa onde o usuário possa digitar cinco valores númericos e cadastre-os em uma lista. Já na posição correta de inserção (sem usar o sort()), 
+# No final, mostre a lista ordenada na tela.
+
+lista_valores = []
+
+for c in range(0, 5):
+    valor = int(input("Digite um valor numérico: "))
+    if c == 0 or valor > lista_valores[-1]:
+        lista_valores.append(valor)
+        print('Adicionado ao final da lista...')
     else:
-        print("Valor duplicado! Não será possivel adicioná-lo")
-    continuar = str(input("Deseja continuar (S/N): "))
-    if continuar in 'Nn':
-       break
-lista_numero.sort()
-print("-=" * 40)
-print(f"Você digitou os valores {lista_numero}")
+        pos = 0
+        while pos < len(lista_valores):
+            if valor <= lista_valores[pos]:
+                lista_valores.insert(pos,valor)
+                print(f'Adicionado na posição {pos} da lista')
+                break
+            pos += 1
+        
+print('-=' * 30)        
+print(lista_valores)
