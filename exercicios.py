@@ -307,21 +307,45 @@
 # 24 Crie um programa onde o usuário possa digitar cinco valores númericos e cadastre-os em uma lista. Já na posição correta de inserção (sem usar o sort()), 
 # No final, mostre a lista ordenada na tela.
 
-lista_valores = []
+# lista_valores = []
 
-for c in range(0, 5):
-    valor = int(input("Digite um valor numérico: "))
-    if c == 0 or valor > lista_valores[-1]:
-        lista_valores.append(valor)
-        print('Adicionado ao final da lista...')
-    else:
-        pos = 0
-        while pos < len(lista_valores):
-            if valor <= lista_valores[pos]:
-                lista_valores.insert(pos,valor)
-                print(f'Adicionado na posição {pos} da lista')
-                break
-            pos += 1
+# for c in range(0, 5):
+#     valor = int(input("Digite um valor numérico: "))
+#     if c == 0 or valor > lista_valores[-1]:
+#         lista_valores.append(valor)
+#         print('Adicionado ao final da lista...')
+#     else:
+#         pos = 0
+#         while pos < len(lista_valores):
+#             if valor <= lista_valores[pos]:
+#                 lista_valores.insert(pos,valor)
+#                 print(f'Adicionado na posição {pos} da lista')
+#                 break
+#             pos += 1
         
-print('-=' * 30)        
-print(lista_valores)
+# print('-=' * 30)        
+# print(lista_valores)
+
+# 25 Crie um programa que vai ler vários números e colocar em uma lista. Depois disso: 
+# A)Quantos números foram digitados. 
+# B) A lista de valores, ordenada de forma descrescente. 
+# C)Se o valor 5 foi digitado e está ou não na lista.
+
+lista_numeros = []
+
+while True:
+    num = int(input('Digite um valor: '))
+    lista_numeros.append(num)
+    continuar = str(input('Deseja continuar (S/N): ')).upper()
+    if continuar == 'N':
+        break
+
+
+print('-=' * 30)    
+print(f'Você digitou {len(lista_numeros)} elementos')
+print(f'O valores em ordem descrescente são {lista_numeros[::-1]}')
+if 5 in lista_numeros:
+        print('O valor 5 faz parte da lista')
+else:
+    print('O valor 5 não faz parte da lista')
+
