@@ -331,21 +331,36 @@
 # B) A lista de valores, ordenada de forma descrescente. 
 # C)Se o valor 5 foi digitado e está ou não na lista.
 
-lista_numeros = []
+# lista_numeros = []
+
+# while True:
+#     num = int(input('Digite um valor: '))
+#     lista_numeros.append(num)
+#     continuar = str(input('Deseja continuar (S/N): ')).upper()
+#     if continuar == 'N':
+#         break
+
+
+# print('-=' * 30)    
+# print(f'Você digitou {len(lista_numeros)} elementos')
+# print(f'O valores em ordem descrescente são {lista_numeros[::-1]}')
+# if 5 in lista_numeros:
+#         print('O valor 5 faz parte da lista')
+# else:
+#     print('O valor 5 não faz parte da lista!')
+
+# 26 Crie um programa que vai ler vários números e colocar em uma lista. Depois disso, crie duas listas extras que vão conter apenas os 
+# valores pares e os valores ímpares digitados, respctivamente. Ao final mostre o contepudo das três listas geradas.
+
+numeros_lista = []
 
 while True:
-    num = int(input('Digite um valor: '))
-    lista_numeros.append(num)
-    continuar = str(input('Deseja continuar (S/N): ')).upper()
-    if continuar == 'N':
+    numero = int(input('Digite um número: '))
+    numeros_lista.append(numero)
+    continuar = str(input('Deseja continuar (S/N)? '))
+    if continuar in 'Nn':
         break
-
-
-print('-=' * 30)    
-print(f'Você digitou {len(lista_numeros)} elementos')
-print(f'O valores em ordem descrescente são {lista_numeros[::-1]}')
-if 5 in lista_numeros:
-        print('O valor 5 faz parte da lista')
-else:
-    print('O valor 5 não faz parte da lista')
+print(f'A lista complea é {numeros_lista}')
+print(f'A lista de pares é {[x for x in numeros_lista if x % 2 == 0]}')
+print(f'A lista de impares é {[x for x in numeros_lista if x % 2 == 1]}')
 
