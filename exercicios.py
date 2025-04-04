@@ -352,15 +352,35 @@
 # 26 Crie um programa que vai ler vários números e colocar em uma lista. Depois disso, crie duas listas extras que vão conter apenas os 
 # valores pares e os valores ímpares digitados, respctivamente. Ao final mostre o contepudo das três listas geradas.
 
-numeros_lista = []
+# numeros_lista = []
 
-while True:
-    numero = int(input('Digite um número: '))
-    numeros_lista.append(numero)
-    continuar = str(input('Deseja continuar (S/N)? '))
-    if continuar in 'Nn':
-        break
-print(f'A lista complea é {numeros_lista}')
-print(f'A lista de pares é {[x for x in numeros_lista if x % 2 == 0]}')
-print(f'A lista de impares é {[x for x in numeros_lista if x % 2 == 1]}')
+# while True:
+#     numero = int(input('Digite um número: '))
+#     numeros_lista.append(numero)
+#     continuar = str(input('Deseja continuar (S/N)? '))
+#     if continuar in 'Nn':
+#         break
+# print(f'A lista complea é {numeros_lista}')
+# print(f'A lista de pares é {[x for x in numeros_lista if x % 2 == 0]}')
+# print(f'A lista de impares é {[x for x in numeros_lista if x % 2 == 1]}')
+
+# 27 Crie um programa onde o usuário digite uma expressão qualquer que use parênteses. Seu aplicativo deverá analisar se a expressão passada 
+# esta com os parênteses abertos e fechados na ordem coreta.
+
+expressao = str(input('Digite a expressão: '))
+pilha_parenteses = []
+
+for simb in expressao:
+    if simb == '(':
+        pilha_parenteses.append('(')
+    elif simb == ')':
+        if len(pilha_parenteses) > 0:
+            pilha_parenteses.pop()
+        else:
+            pilha_parenteses.append(')')
+            break
+if len(pilha_parenteses) == 0:
+    print('Sua expressão esta correta!')
+else:
+    print('Sua expressão esta errada!')
 
