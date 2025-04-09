@@ -463,6 +463,3 @@ print(f'O menor peso foi {peso_min}. Peso de ', end='')
 for pessoa in cadastro_pessoas:       
     if peso_min == pessoa[1]:
        print(f'[{pessoa[0]}] ', end='')
-
-
-    
