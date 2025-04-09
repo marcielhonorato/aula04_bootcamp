@@ -367,20 +367,102 @@
 # 27 Crie um programa onde o usuário digite uma expressão qualquer que use parênteses. Seu aplicativo deverá analisar se a expressão passada 
 # esta com os parênteses abertos e fechados na ordem coreta.
 
-expressao = str(input('Digite a expressão: '))
-pilha_parenteses = []
+# expressao = str(input('Digite a expressão: '))
+# pilha_parenteses = []
 
-for simb in expressao:
-    if simb == '(':
-        pilha_parenteses.append('(')
-    elif simb == ')':
-        if len(pilha_parenteses) > 0:
-            pilha_parenteses.pop()
-        else:
-            pilha_parenteses.append(')')
-            break
-if len(pilha_parenteses) == 0:
-    print('Sua expressão esta correta!')
-else:
-    print('Sua expressão esta errada!')
+# for simb in expressao:
+#     if simb == '(':
+#         pilha_parenteses.append('(')
+#     elif simb == ')':
+#         if len(pilha_parenteses) > 0:
+#             pilha_parenteses.pop()
+#         else:
+#             pilha_parenteses.append(')')
+#             break
+# if len(pilha_parenteses) == 0:
+#     print('Sua expressão esta correta!')
+# else:
+#     print('Sua expressão esta errada!')
 
+# 28 Faça um programa que leia nome e peso de várias pessoa, guardando tudo em uma lista. No final mostre 
+# A) Quantas pessoas foram cadastradas 
+# B) Uma listagem com as pessoas mais pesadas 
+# C) Uma listagem com as pessoas mais leves
+
+
+# cadastro_pessoas = list()
+
+# dados_pessoa = list()
+
+# lista_peso_pessoa = list()
+
+# lista_maior_peso = list()
+
+# lista_menor_peso = list()
+
+# while True:
+#     nome = str(input('Digite o nome: '))
+#     dados_pessoa.append(nome)
+#     peso = int(input('Digite o peso: '))
+#     dados_pessoa.append(peso)
+#     cadastro_pessoas.append(dados_pessoa[:])   
+#     dados_pessoa.clear()
+#     continuar = str(input('Deseja continuar N/S: ' ))
+#     if continuar in ('Nn'):
+#         break;
+
+# for pessoa in cadastro_pessoas:
+#     lista_peso_pessoa.append(pessoa[1])
+
+# for pessoa_peso in cadastro_pessoas:
+#     if pessoa_peso[1] == max(lista_peso_pessoa):
+#         lista_maior_peso.append(pessoa_peso[0])
+#     elif pessoa_peso[1] == min(lista_peso_pessoa):
+#         lista_menor_peso.append(pessoa_peso[0])
+        
+# print('-=' * 30)
+
+# print(f'Ao todo, você cadastrou {len(cadastro_pessoas)} pessoas')
+# print(f'O maior peso foi {max(lista_peso_pessoa)}. Peso de {lista_maior_peso}.')
+# print(f'O menor peso foi {min(lista_peso_pessoa)}. Peso de {lista_menor_peso}.')
+
+
+cadastro_pessoas = list()
+
+dado_temp = list()
+
+peso_min = peso_max = 0
+
+while True:
+    dado_temp.append(str(input('Digite o nome: ')))
+    dado_temp.append(int(input('Digite o peso: ')))
+    
+    if len(cadastro_pessoas) == 0:
+        peso_min = peso_max = dado_temp[1]
+    else:
+        if dado_temp[1] > peso_max:
+            peso_max = dado_temp[1]
+        if dado_temp[1] < peso_min:
+            peso_min = dado_temp[1]
+    cadastro_pessoas.append(dado_temp[:])
+    dado_temp.clear()
+    continuar = str(input('Deseja continuar (N/n): '))
+    if continuar in 'Nn':
+        break
+
+print('-=' * 30)
+print(f'Ao todo, você cadastrou {len(cadastro_pessoas)} pessoas.')
+
+print(f'O maior peso foi {peso_max}. Peso de ', end='')
+for pessoa in cadastro_pessoas:
+    if peso_max == pessoa[1]:
+        print(f'[{pessoa[0]}] ', end='')
+
+print()
+print(f'O menor peso foi {peso_min}. Peso de ', end='')
+for pessoa in cadastro_pessoas:       
+    if peso_min == pessoa[1]:
+       print(f'[{pessoa[0]}] ', end='')
+
+
+    
