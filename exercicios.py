@@ -427,39 +427,58 @@
 # print(f'O menor peso foi {min(lista_peso_pessoa)}. Peso de {lista_menor_peso}.')
 
 
-cadastro_pessoas = list()
+# cadastro_pessoas = list()
 
-dado_temp = list()
+# dado_temp = list()
 
-peso_min = peso_max = 0
+# peso_min = peso_max = 0
 
-while True:
-    dado_temp.append(str(input('Digite o nome: ')))
-    dado_temp.append(int(input('Digite o peso: ')))
+# while True:
+#     dado_temp.append(str(input('Digite o nome: ')))
+#     dado_temp.append(int(input('Digite o peso: ')))
     
-    if len(cadastro_pessoas) == 0:
-        peso_min = peso_max = dado_temp[1]
+#     if len(cadastro_pessoas) == 0:
+#         peso_min = peso_max = dado_temp[1]
+#     else:
+#         if dado_temp[1] > peso_max:
+#             peso_max = dado_temp[1]
+#         if dado_temp[1] < peso_min:
+#             peso_min = dado_temp[1]
+#     cadastro_pessoas.append(dado_temp[:])
+#     dado_temp.clear()
+#     continuar = str(input('Deseja continuar (N/n): '))
+#     if continuar in 'Nn':
+#         break
+
+# print('-=' * 30)
+# print(f'Ao todo, você cadastrou {len(cadastro_pessoas)} pessoas.')
+
+# print(f'O maior peso foi {peso_max}. Peso de ', end='')
+# for pessoa in cadastro_pessoas:
+#     if peso_max == pessoa[1]:
+#         print(f'[{pessoa[0]}] ', end='')
+
+# print()
+# print(f'O menor peso foi {peso_min}. Peso de ', end='')
+# for pessoa in cadastro_pessoas:       
+#     if peso_min == pessoa[1]:
+#        print(f'[{pessoa[0]}] ', end='')
+
+# 29 Criar um programa onde o usuário possa digitar sete valores numéricos e cadastre-os em uma lista unica que mantenha separados os valores pares e ímpares. 
+# No final, mostre os valores pares e impares em ordem crescente.
+
+lista_pares_impares =[[], []]
+
+for pos in range(1,8):
+    numero = int(input(f'Digite o {pos}º numero: '))
+    if numero % 2 == 0:
+        lista_pares_impares[0].append(numero)
     else:
-        if dado_temp[1] > peso_max:
-            peso_max = dado_temp[1]
-        if dado_temp[1] < peso_min:
-            peso_min = dado_temp[1]
-    cadastro_pessoas.append(dado_temp[:])
-    dado_temp.clear()
-    continuar = str(input('Deseja continuar (N/n): '))
-    if continuar in 'Nn':
-        break
+        lista_pares_impares[1].append(numero)
 
 print('-=' * 30)
-print(f'Ao todo, você cadastrou {len(cadastro_pessoas)} pessoas.')
 
-print(f'O maior peso foi {peso_max}. Peso de ', end='')
-for pessoa in cadastro_pessoas:
-    if peso_max == pessoa[1]:
-        print(f'[{pessoa[0]}] ', end='')
-
-print()
-print(f'O menor peso foi {peso_min}. Peso de ', end='')
-for pessoa in cadastro_pessoas:       
-    if peso_min == pessoa[1]:
-       print(f'[{pessoa[0]}] ', end='')
+lista_pares_impares[0].sort()
+lista_pares_impares[1].sort()
+print(f'Os valores pares digitados foram: {lista_pares_impares[0]}')
+print(f'Os valores impares digitados foram: {lista_pares_impares[1]}')
