@@ -467,18 +467,34 @@
 # 29 Criar um programa onde o usuário possa digitar sete valores numéricos e cadastre-os em uma lista unica que mantenha separados os valores pares e ímpares. 
 # No final, mostre os valores pares e impares em ordem crescente.
 
-lista_pares_impares =[[], []]
+# lista_pares_impares =[[], []]
 
-for pos in range(1,8):
-    numero = int(input(f'Digite o {pos}º numero: '))
-    if numero % 2 == 0:
-        lista_pares_impares[0].append(numero)
-    else:
-        lista_pares_impares[1].append(numero)
+# for pos in range(1,8):
+#     numero = int(input(f'Digite o {pos}º numero: '))
+#     if numero % 2 == 0:
+#         lista_pares_impares[0].append(numero)
+#     else:
+#         lista_pares_impares[1].append(numero)
+
+# print('-=' * 30)
+
+# lista_pares_impares[0].sort()
+# lista_pares_impares[1].sort()
+# print(f'Os valores pares digitados foram: {lista_pares_impares[0]}')
+# print(f'Os valores impares digitados foram: {lista_pares_impares[1]}')
+
+# 30 Crie um programa que crie uma matriz de dimensão 3x3 e preencha com valores lidos pelo teclado.No final, mostre a matriz na tela, com a formatação correta
+
+matriz = [[0,0,0], [0,0,0], [0,0,0]]
+
+for i in range(0,3):
+    for j in range(0,3):
+        matriz[i][j] = int(input(f'Digite um valor para [{i},{j}]: '))
 
 print('-=' * 30)
 
-lista_pares_impares[0].sort()
-lista_pares_impares[1].sort()
-print(f'Os valores pares digitados foram: {lista_pares_impares[0]}')
-print(f'Os valores impares digitados foram: {lista_pares_impares[1]}')
+for i in range(0,3):
+    print(end='')
+    for j in range(0,3):
+        print(f'[{matriz[i][j]:^5}]', end='')
+    print()
