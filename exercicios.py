@@ -485,7 +485,28 @@
 
 # 30 Crie um programa que crie uma matriz de dimensão 3x3 e preencha com valores lidos pelo teclado.No final, mostre a matriz na tela, com a formatação correta
 
+# matriz = [[0,0,0], [0,0,0], [0,0,0]]
+
+# for i in range(0,3):
+#     for j in range(0,3):
+#         matriz[i][j] = int(input(f'Digite um valor para [{i},{j}]: '))
+
+# print('-=' * 30)
+
+# for i in range(0,3):
+#     print(end='')
+#     for j in range(0,3):
+#         print(f'[{matriz[i][j]:^5}]', end='')
+#     print()
+
+# 31 Aprimore o desafio anterior, mostrando no final: 
+# A) A soma de todas os valores pares digitados. 
+# B) A somados valores da terceira coluna.
+# C) O maior valor da segunda linha.
+
 matriz = [[0,0,0], [0,0,0], [0,0,0]]
+
+soma_pares = soma_terceira_coluna = maior_valor = 0
 
 for i in range(0,3):
     for j in range(0,3):
@@ -493,8 +514,22 @@ for i in range(0,3):
 
 print('-=' * 30)
 
-for i in range(0,3):
-    print(end='')
-    for j in range(0,3):
-        print(f'[{matriz[i][j]:^5}]', end='')
+for h in range(0,3):
+    for f in range(0,3):
+        if matriz[h][f] % 2 == 0:
+            soma_pares += matriz[h][f]
+        print(f'[{matriz[h][f]:^5}]', end='')
     print()
+
+print('-=' * 30)
+
+for pos_soma in range(0, 3):
+    soma_terceira_coluna += matriz[pos_soma][2]
+
+for pos_max in range(0, 3):
+    if  matriz[1][pos_max] > maior_valor:
+        maior_valor = matriz[1][pos_max]
+
+print(f'A soma dos valores pares é {soma_pares}.')
+print(f'A soma dos valores da terceira coluna é {soma_terceira_coluna}.')
+print(f'O maior valor da segunda linha é {maior_valor}.')
