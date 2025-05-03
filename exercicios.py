@@ -504,32 +504,74 @@
 # B) A somados valores da terceira coluna.
 # C) O maior valor da segunda linha.
 
-matriz = [[0,0,0], [0,0,0], [0,0,0]]
+# matriz = [[0,0,0], [0,0,0], [0,0,0]]
 
-soma_pares = soma_terceira_coluna = maior_valor = 0
+# soma_pares = soma_terceira_coluna = maior_valor = 0
 
-for i in range(0,3):
-    for j in range(0,3):
-        matriz[i][j] = int(input(f'Digite um valor para [{i},{j}]: '))
+# for i in range(0,3):
+#     for j in range(0,3):
+#         matriz[i][j] = int(input(f'Digite um valor para [{i},{j}]: '))
 
-print('-=' * 30)
+# print('-=' * 30)
 
-for h in range(0,3):
-    for f in range(0,3):
-        if matriz[h][f] % 2 == 0:
-            soma_pares += matriz[h][f]
-        print(f'[{matriz[h][f]:^5}]', end='')
-    print()
+# for h in range(0,3):
+#     for f in range(0,3):
+#         if matriz[h][f] % 2 == 0:
+#             soma_pares += matriz[h][f]
+#         print(f'[{matriz[h][f]:^5}]', end='')
+#     print()
 
-print('-=' * 30)
+# print('-=' * 30)
 
-for pos_soma in range(0, 3):
-    soma_terceira_coluna += matriz[pos_soma][2]
+# for pos_soma in range(0, 3):
+#     soma_terceira_coluna += matriz[pos_soma][2]
 
-for pos_max in range(0, 3):
-    if  matriz[1][pos_max] > maior_valor:
-        maior_valor = matriz[1][pos_max]
+# for pos_max in range(0, 3):
+#     if  matriz[1][pos_max] > maior_valor:
+#         maior_valor = matriz[1][pos_max]
 
-print(f'A soma dos valores pares é {soma_pares}.')
-print(f'A soma dos valores da terceira coluna é {soma_terceira_coluna}.')
-print(f'O maior valor da segunda linha é {maior_valor}.')
+# print(f'A soma dos valores pares é {soma_pares}.')
+# print(f'A soma dos valores da terceira coluna é {soma_terceira_coluna}.')
+# print(f'O maior valor da segunda linha é {maior_valor}.')
+
+# 32 Faça um programa que ajude um jogador da MEGA SENA a criar palpites. O programa vai perguntar quantos jogos serão gerados e 
+# vai sortear 6 números entre 1 e 60 para cada jogo, cadastrando tudo em uma lista composta.
+
+from random import randint
+from time import sleep
+
+print("-" * 30)
+print('        JOGA NA MEGA SENA        ')
+print("-" * 30)
+
+quantidade_jogos = int(input(("Quantos jogos você quer que eu sorteie? ")))
+
+lista_jogos = list()
+lista_numeros = list()
+
+contador_numeros_jogos = 1
+
+while contador_numeros_jogos <= quantidade_jogos:
+    contador_numeros = 0
+    while True:
+        numero = randint(1, 60) 
+        if numero is not lista_numeros:
+            lista_numeros.append(numero)
+        contador_numeros += 1
+        if contador_numeros >= 6:
+            break
+    lista_numeros.sort()
+    lista_jogos.append(lista_numeros[:])
+    lista_numeros.clear()
+    contador_numeros_jogos += 1
+
+print()
+print('-=' * 3, f'SORTEANDO {quantidade_jogos} JOGOS','-=' * 3)
+print()
+
+for pos, i in enumerate(lista_jogos):
+    print(f'Jogo {pos + 1} : {i}')
+    sleep(1)
+
+print()
+print('-=' * 5, '< BOA SORTE! >','-=' * 5)
