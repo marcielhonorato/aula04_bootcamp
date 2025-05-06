@@ -579,29 +579,45 @@
 # 33 Crie um programa que leia nome e duas notas de vários alunos e guarde tudo em uma lista composta. No final, mostre um boletim contendo a média de cada um 
 # e permitindo que o usuário possa mostrar as notas de cada aluno individualmente.
 
-ficha = list()
+# ficha = list()
 
-while True:
-    nome = str(input('Nome: '))
-    nota1 = float(input('Nota 1: '))
-    nota2 = float(input('Nota 2: '))
-    media = (nota1 + nota2) / 2
-    ficha.append([nome,[nota1, nota2], media])
-    resposta = str(input('Cadastrar mais alunos (S/N): '))
-    if resposta in 'Nn':
-        break
+# while True:
+#     nome = str(input('Nome: '))
+#     nota1 = float(input('Nota 1: '))
+#     nota2 = float(input('Nota 2: '))
+#     media = (nota1 + nota2) / 2
+#     ficha.append([nome,[nota1, nota2], media])
+#     resposta = str(input('Cadastrar mais alunos (S/N): '))
+#     if resposta in 'Nn':
+#         break
+# print('-=' * 30)
+# print(f'{"Nº":<4} {"Nome":<10} {"Media":>8}')
+
+# for pos, aluno in enumerate(ficha):
+#     print(f'{pos:<4} {aluno[0]:<10} {aluno[2]:>8.1f}')
+
+# while True:
+#     print('-' * 35)
+#     mostrar_nota_aluno = int(input('Mostrar nota de qual aluno (999 para sair): '))
+#     if mostrar_nota_aluno == 999:
+#         print( 'FINALIZANDO...')
+#         break
+#     if mostrar_nota_aluno <= len(ficha) - 1:
+#         print(f'Notas de {ficha[mostrar_nota_aluno][0]} são [{ficha[mostrar_nota_aluno][1]}]')
+# print('<<< VOLTE SEMPRE >>>')
+
+# 34 Faça um programa que leia nome e média de um aluno, guardando também a situação em um dicionário. No final, mostre o conteúdo da estrutura na tela.
+
+aluno = dict()
+
+aluno['nome'] = str(input('Nome: '))
+aluno['media'] = float(input(f'Média de {aluno['nome']} : '))
+if aluno['media'] >= 7.0:
+    aluno['situacao'] = 'Aprovado'
+elif  5 <= aluno['media'] < 7:
+     aluno['situacao'] = 'Recuperação'
+else:
+    aluno['situacao'] = 'Reprovado'
 print('-=' * 30)
-print(f'{"Nº":<4} {"Nome":<10} {"Media":>8}')
-
-for pos, aluno in enumerate(ficha):
-    print(f'{pos:<4} {aluno[0]:<10} {aluno[2]:>8.1f}')
-
-while True:
-    print('-' * 35)
-    mostrar_nota_aluno = int(input('Mostrar nota de qual aluno (999 para sair): '))
-    if mostrar_nota_aluno == 999:
-        print( 'FINALIZANDO...')
-        break
-    if mostrar_nota_aluno <= len(ficha) - 1:
-        print(f'Notas de {ficha[mostrar_nota_aluno][0]} são [{ficha[mostrar_nota_aluno][1]}]')
-print('<<< VOLTE SEMPRE >>>')
+for chave, valor in aluno.items():
+    print(f' - {chave} é igual a {valor}')
