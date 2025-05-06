@@ -537,41 +537,71 @@
 # 32 Faça um programa que ajude um jogador da MEGA SENA a criar palpites. O programa vai perguntar quantos jogos serão gerados e 
 # vai sortear 6 números entre 1 e 60 para cada jogo, cadastrando tudo em uma lista composta.
 
-from random import randint
-from time import sleep
+# from random import randint
+# from time import sleep
 
-print("-" * 30)
-print('        JOGA NA MEGA SENA        ')
-print("-" * 30)
+# print("-" * 30)
+# print('        JOGA NA MEGA SENA        ')
+# print("-" * 30)
 
-quantidade_jogos = int(input(("Quantos jogos você quer que eu sorteie? ")))
+# quantidade_jogos = int(input(("Quantos jogos você quer que eu sorteie? ")))
 
-lista_jogos = list()
-lista_numeros = list()
+# lista_jogos = list()
+# lista_numeros = list()
 
-contador_numeros_jogos = 1
+# contador_numeros_jogos = 1
 
-while contador_numeros_jogos <= quantidade_jogos:
-    contador_numeros = 0
-    while True:
-        numero = randint(1, 60) 
-        if numero is not lista_numeros:
-            lista_numeros.append(numero)
-        contador_numeros += 1
-        if contador_numeros >= 6:
-            break
-    lista_numeros.sort()
-    lista_jogos.append(lista_numeros[:])
-    lista_numeros.clear()
-    contador_numeros_jogos += 1
+# while contador_numeros_jogos <= quantidade_jogos:
+#     contador_numeros = 0
+#     while True:
+#         numero = randint(1, 60) 
+#         if numero is not lista_numeros:
+#             lista_numeros.append(numero)
+#         contador_numeros += 1
+#         if contador_numeros >= 6:
+#             break
+#     lista_numeros.sort()
+#     lista_jogos.append(lista_numeros[:])
+#     lista_numeros.clear()
+#     contador_numeros_jogos += 1
 
-print()
-print('-=' * 3, f'SORTEANDO {quantidade_jogos} JOGOS','-=' * 3)
-print()
+# print()
+# print('-=' * 3, f'SORTEANDO {quantidade_jogos} JOGOS','-=' * 3)
+# print()
 
-for pos, i in enumerate(lista_jogos):
-    print(f'Jogo {pos + 1} : {i}')
-    sleep(1)
+# for pos, i in enumerate(lista_jogos):
+#     print(f'Jogo {pos + 1} : {i}')
+#     sleep(1)
 
-print()
-print('-=' * 5, '< BOA SORTE! >','-=' * 5)
+# print()
+# print('-=' * 5, '< BOA SORTE! >','-=' * 5)
+
+# 33 Crie um programa que leia nome e duas notas de vários alunos e guarde tudo em uma lista composta. No final, mostre um boletim contendo a média de cada um 
+# e permitindo que o usuário possa mostrar as notas de cada aluno individualmente.
+
+ficha = list()
+
+while True:
+    nome = str(input('Nome: '))
+    nota1 = float(input('Nota 1: '))
+    nota2 = float(input('Nota 2: '))
+    media = (nota1 + nota2) / 2
+    ficha.append([nome,[nota1, nota2], media])
+    resposta = str(input('Cadastrar mais alunos (S/N): '))
+    if resposta in 'Nn':
+        break
+print('-=' * 30)
+print(f'{"Nº":<4} {"Nome":<10} {"Media":>8}')
+
+for pos, aluno in enumerate(ficha):
+    print(f'{pos:<4} {aluno[0]:<10} {aluno[2]:>8.1f}')
+
+while True:
+    print('-' * 35)
+    mostrar_nota_aluno = int(input('Mostrar nota de qual aluno (999 para sair): '))
+    if mostrar_nota_aluno == 999:
+        print( 'FINALIZANDO...')
+        break
+    if mostrar_nota_aluno <= len(ficha) - 1:
+        print(f'Notas de {ficha[mostrar_nota_aluno][0]} são [{ficha[mostrar_nota_aluno][1]}]')
+print('<<< VOLTE SEMPRE >>>')
