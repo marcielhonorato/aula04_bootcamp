@@ -608,16 +608,49 @@
 
 # 34 Faça um programa que leia nome e média de um aluno, guardando também a situação em um dicionário. No final, mostre o conteúdo da estrutura na tela.
 
-aluno = dict()
+# aluno = dict()
 
-aluno['nome'] = str(input('Nome: '))
-aluno['media'] = float(input(f'Média de {aluno['nome']} : '))
-if aluno['media'] >= 7.0:
-    aluno['situacao'] = 'Aprovado'
-elif  5 <= aluno['media'] < 7:
-     aluno['situacao'] = 'Recuperação'
-else:
-    aluno['situacao'] = 'Reprovado'
+# aluno['nome'] = str(input('Nome: '))
+# aluno['media'] = float(input(f'Média de {aluno['nome']} : '))
+# if aluno['media'] >= 7.0:
+#     aluno['situacao'] = 'Aprovado'
+# elif  5 <= aluno['media'] < 7:
+#      aluno['situacao'] = 'Recuperação'
+# else:
+#     aluno['situacao'] = 'Reprovado'
+# print('-=' * 30)
+# for chave, valor in aluno.items():
+#     print(f' - {chave} é igual a {valor}')
+
+# 35 Crie um programa onde 4 jogadres joguem um dado e tenham resultados em um dicionário. No final, coloque esse dicionário em ordem, 
+# sabendo que o vencedor tirou o maior número no dado.
+
+from random import randint
+from operator import itemgetter
+from time import sleep
+
+jogo_dado = {'jogador1': randint(1,6), 
+             'jogador2': randint(1,6), 
+             'jogador3': randint(1,6), 
+             'jogador4': randint(1,6)}
+
+ranking = list()
+
+print('Valores Sorteados:')
+
+for jogador, valor_dado in jogo_dado.items():
+    print(f'{jogador} tirou {valor_dado} no dado.')
+    sleep(1)
+ranking = sorted(jogo_dado.items(), key=itemgetter(1), reverse=True)
+
 print('-=' * 30)
-for chave, valor in aluno.items():
-    print(f' - {chave} é igual a {valor}')
+print('  == RANKING DOS JOGADORES ==')
+
+for pos, rank in enumerate(ranking):
+    print(f'  {pos + 1}º lugar: {rank[0]} com {rank[1]}')
+    sleep(1)
+
+
+
+
+
