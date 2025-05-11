@@ -625,31 +625,54 @@
 # 35 Crie um programa onde 4 jogadres joguem um dado e tenham resultados em um dicionário. No final, coloque esse dicionário em ordem, 
 # sabendo que o vencedor tirou o maior número no dado.
 
-from random import randint
-from operator import itemgetter
-from time import sleep
+# from random import randint
+# from operator import itemgetter
+# from time import sleep
 
-jogo_dado = {'jogador1': randint(1,6), 
-             'jogador2': randint(1,6), 
-             'jogador3': randint(1,6), 
-             'jogador4': randint(1,6)}
+# jogo_dado = {'jogador1': randint(1,6), 
+#              'jogador2': randint(1,6), 
+#              'jogador3': randint(1,6), 
+#              'jogador4': randint(1,6)}
 
-ranking = list()
+# ranking = list()
 
-print('Valores Sorteados:')
+# print('Valores Sorteados:')
 
-for jogador, valor_dado in jogo_dado.items():
-    print(f'{jogador} tirou {valor_dado} no dado.')
-    sleep(1)
-ranking = sorted(jogo_dado.items(), key=itemgetter(1), reverse=True)
+# for jogador, valor_dado in jogo_dado.items():
+#     print(f'{jogador} tirou {valor_dado} no dado.')
+#     sleep(1)
+# ranking = sorted(jogo_dado.items(), key=itemgetter(1), reverse=True)
 
+# print('-=' * 30)
+# print('  == RANKING DOS JOGADORES ==')
+
+# for pos, rank in enumerate(ranking):
+#     print(f'  {pos + 1}º lugar: {rank[0]} com {rank[1]}')
+#     sleep(1)
+
+#34 Crie um programa que leia nome, ano de nascimento e carteira de trabalho e cadastre-os (com idade) em um dicionário 
+# se por acaso o CTPS for diferente de ZERO, o dicionário receberá também o ano de contratação e o salário. 
+# Calcule e acrescente, além da idade, com quantos anos a pessoa vai se aposentar (35 anos de contribuição).
+
+from datetime import datetime as dt
+
+cadastro_pessoa = dict()
+
+cadastro_pessoa['Nome'] = str(input('Nome: '))
+ano_nascimento = int(input('Ano de Nascimento: '))
+cadastro_pessoa['Idade'] = dt.today().year - ano_nascimento
+cadastro_pessoa['Nº CTPS'] = int(input('Carteira de Trabalho (0 não tem): '))
+
+if cadastro_pessoa['Nº CTPS'] != 0:
+    cadastro_pessoa['Ano de Contratação'] = int(input('Ano de Contratação: '))
+    cadastro_pessoa['Salário'] = float(input('Salário R$: '))
+    cadastro_pessoa['Aposentadoria'] =  (cadastro_pessoa['Ano de Contratação'] - ano_nascimento) + 35  #cadastro_pessoa['Idade'] + (cadastro_pessoa['Ano de Contratação'] + 35) - dt.now().year
+    print(cadastro_pessoa)
+else:
+    print(cadastro_pessoa)
 print('-=' * 30)
-print('  == RANKING DOS JOGADORES ==')
-
-for pos, rank in enumerate(ranking):
-    print(f'  {pos + 1}º lugar: {rank[0]} com {rank[1]}')
-    sleep(1)
-
+for chave, valor in cadastro_pessoa.items():
+    print(f'- {chave} tem o valor {valor}')
 
 
 
