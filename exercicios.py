@@ -650,30 +650,48 @@
 #     print(f'  {pos + 1}º lugar: {rank[0]} com {rank[1]}')
 #     sleep(1)
 
-#34 Crie um programa que leia nome, ano de nascimento e carteira de trabalho e cadastre-os (com idade) em um dicionário 
+# 34 Crie um programa que leia nome, ano de nascimento e carteira de trabalho e cadastre-os (com idade) em um dicionário 
 # se por acaso o CTPS for diferente de ZERO, o dicionário receberá também o ano de contratação e o salário. 
 # Calcule e acrescente, além da idade, com quantos anos a pessoa vai se aposentar (35 anos de contribuição).
 
-from datetime import datetime as dt
+# from datetime import datetime as dt
 
-cadastro_pessoa = dict()
+# cadastro_pessoa = dict()
 
-cadastro_pessoa['Nome'] = str(input('Nome: '))
-ano_nascimento = int(input('Ano de Nascimento: '))
-cadastro_pessoa['Idade'] = dt.today().year - ano_nascimento
-cadastro_pessoa['Nº CTPS'] = int(input('Carteira de Trabalho (0 não tem): '))
+# cadastro_pessoa['Nome'] = str(input('Nome: '))
+# ano_nascimento = int(input('Ano de Nascimento: '))
+# cadastro_pessoa['Idade'] = dt.today().year - ano_nascimento
+# cadastro_pessoa['Nº CTPS'] = int(input('Carteira de Trabalho (0 não tem): '))
 
-if cadastro_pessoa['Nº CTPS'] != 0:
-    cadastro_pessoa['Ano de Contratação'] = int(input('Ano de Contratação: '))
-    cadastro_pessoa['Salário'] = float(input('Salário R$: '))
-    cadastro_pessoa['Aposentadoria'] =  (cadastro_pessoa['Ano de Contratação'] - ano_nascimento) + 35  #cadastro_pessoa['Idade'] + (cadastro_pessoa['Ano de Contratação'] + 35) - dt.now().year
-    print(cadastro_pessoa)
-else:
-    print(cadastro_pessoa)
+# if cadastro_pessoa['Nº CTPS'] != 0:
+#     cadastro_pessoa['Ano de Contratação'] = int(input('Ano de Contratação: '))
+#     cadastro_pessoa['Salário'] = float(input('Salário R$: '))
+#     cadastro_pessoa['Aposentadoria'] =  (cadastro_pessoa['Ano de Contratação'] - ano_nascimento) + 35  #cadastro_pessoa['Idade'] + (cadastro_pessoa['Ano de Contratação'] + 35) - dt.now().year
+#     print(cadastro_pessoa)
+# else:
+#     print(cadastro_pessoa)
+# print('-=' * 30)
+# for chave, valor in cadastro_pessoa.items():
+#     print(f'- {chave} tem o valor {valor}')
+
+# 35 Crie um programa que gerencie o aproveitamento de um jogador de futebol. O programa vai ler o nome do jogador e quantas partidas ele jogou. Depois vai ler 
+# a quantidade de gols feitos em cada partida. No final, tudo isso será guardado em um dicionário,incluindo o total de gols feitos durante o campeonato
+
+jogador = dict()
+partidas_gols = list()
+jogador['nome'] = str(input('Nome do Jogador: '))
+total_partidas = int(input(f'Quantas partidas {jogador["nome"]} jogou?: '))
+for cont in range(0, total_partidas):
+    partidas_gols.append(int(input(f'    Quantos gols na partida {cont+1}: ')))
+jogador['gols'] = partidas_gols[:]
+jogador['total'] = sum(partidas_gols)
 print('-=' * 30)
-for chave, valor in cadastro_pessoa.items():
-    print(f'- {chave} tem o valor {valor}')
-
-
-
-
+print(jogador)
+print('-=' * 30)
+for chave, valor in jogador.items():
+    print(f'O campo {chave} tem o valor {valor}.')
+print('-=' * 30)
+print(f'O jogador {jogador["nome"]}, jogou {total_partidas} partidas.')
+for i, gol in enumerate(jogador['gols']):
+    print(f'     => Na partida {i + 1}, fez {gol} gols.')
+print(f'Foi um total de {jogador["total"]} gols.')
