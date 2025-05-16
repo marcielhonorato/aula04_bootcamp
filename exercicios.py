@@ -677,21 +677,65 @@
 # 35 Crie um programa que gerencie o aproveitamento de um jogador de futebol. O programa vai ler o nome do jogador e quantas partidas ele jogou. Depois vai ler 
 # a quantidade de gols feitos em cada partida. No final, tudo isso será guardado em um dicionário,incluindo o total de gols feitos durante o campeonato
 
-jogador = dict()
-partidas_gols = list()
-jogador['nome'] = str(input('Nome do Jogador: '))
-total_partidas = int(input(f'Quantas partidas {jogador["nome"]} jogou?: '))
-for cont in range(0, total_partidas):
-    partidas_gols.append(int(input(f'    Quantos gols na partida {cont+1}: ')))
-jogador['gols'] = partidas_gols[:]
-jogador['total'] = sum(partidas_gols)
+# jogador = dict()
+# partidas_gols = list()
+# jogador['nome'] = str(input('Nome do Jogador: '))
+# total_partidas = int(input(f'Quantas partidas {jogador["nome"]} jogou?: '))
+# for cont in range(0, total_partidas):
+#     partidas_gols.append(int(input(f'    Quantos gols na partida {cont+1}: ')))
+# jogador['gols'] = partidas_gols[:]
+# jogador['total'] = sum(partidas_gols)
+# print('-=' * 30)
+# print(jogador)
+# print('-=' * 30)
+# for chave, valor in jogador.items():
+#     print(f'O campo {chave} tem o valor {valor}.')
+# print('-=' * 30)
+# print(f'O jogador {jogador["nome"]}, jogou {total_partidas} partidas.')
+# for i, gol in enumerate(jogador['gols']):
+#     print(f'     => Na partida {i + 1}, fez {gol} gols.')
+# print(f'Foi um total de {jogador["total"]} gols.')
+
+# 36 Crie um programa que leia nome, sexo e idade de várias pessoas, gurdando os dados de cada pessoa em um dicionário e todos o dicionário em uma lista, 
+# no final mostrar:
+# A) Quantas pessoas foram cadastradas. 
+# B) A média de idade do grupo. 
+# C) Uma lista com todas as mulheres. 
+# D) Uma lista com todas a pessoas com idade acima da média
+
+grupo_pessoa = list()
+pessoa = dict()
+soma = 0
+while True:
+    pessoa['nome'] = str(input('Nome: '))
+    while True:
+        pessoa['sexo'] = str(input('Sexo: ')).upper()
+        if pessoa['sexo'] in 'MF':
+            break
+        print('ERRO! Por favor digite apenas M ou F.')
+    pessoa['idade'] = int(input('Idade: ')) 
+    soma += pessoa['idade']
+    grupo_pessoa.append(pessoa.copy())  
+    while True:
+        resposta = str(input('Deseja cadastrar mais pessoas (S/N):')).upper()
+        if resposta in 'SN':
+            break
+        print('Responda apenas S ou N')  
+    if resposta == 'N':
+        break   
 print('-=' * 30)
-print(jogador)
-print('-=' * 30)
-for chave, valor in jogador.items():
-    print(f'O campo {chave} tem o valor {valor}.')
-print('-=' * 30)
-print(f'O jogador {jogador["nome"]}, jogou {total_partidas} partidas.')
-for i, gol in enumerate(jogador['gols']):
-    print(f'     => Na partida {i + 1}, fez {gol} gols.')
-print(f'Foi um total de {jogador["total"]} gols.')
+media = soma / len(grupo_pessoa)
+print(f'A) Ao todo de {len(grupo_pessoa)} pessoas cadastradas.')
+print(f'B) A média de idade é de {media:.2f} anos.')
+print('As mulheres cadastradas foram ', end='')
+for p in grupo_pessoa:
+    if p['sexo'] == 'F':
+        print(f'{p['nome']} ', end='')
+print()
+print(f'D) Uma lista com todas a pessoas com idade acima da média: ', end='')
+for p in grupo_pessoa:
+    if p['idade'] >= media:
+        print('     ', end='')
+        for k, v in p.items():
+            print(f'{k}={v} ', end='')
+print('<< ENCERRADO >>')
