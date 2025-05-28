@@ -743,47 +743,61 @@
 
 # 37) Aprimore o DESAFIO 35 para que ele funcione com vários jogadores, incluindo um sistema de visualização de detalhes do aproveitamento de cada jogador.
 
-time = list()
-jogador = dict()
-partidas = list()
-while True:
-    jogador.clear()
-    jogador['nome'] = str(input('Nome do Jogador: '))
-    total = int(input(f'Quantas partidas {jogador['nome']}: '))
-    for c in range(0,total):
-        partidas.append(int(input(f'    Quantos gols na partida {c+1}: ')))
-    jogador['gols'] = partidas[:]
-    jogador['total'] = sum(partidas)
-    time.append(jogador.copy())
-    partidas.clear()
-    while True:
-        resposta = str(input('Deseja continuar (S/N) ?:')).upper()
-        if resposta in 'SN':
-            break
-        print('ERRO!. Responda paenas S ou N')
-    if resposta == 'N':
-        break
-print('-=' * 30)
-print('cod ', end='')
-for i in jogador.keys():
-    print(f'{i:<20}', end='')
-print()
-print('--' * 30)
-for k, v in enumerate(time):
-    print(f'{k:>3} ', end='')
-    for d in v.values():
-        print(f'{str(d):<20}', end='')
-    print()
-print('--' * 30)
-while True:
-    busca = int(input('Mostrar dados de qual jogador (999 para parar): '))
-    if busca == 999:
-        break
-    if busca >= len(time):
-        print(f'Erro!. Não existe o jogador com o código {busca}!')
-    else:
-        print(f' -- LEVATAMENTO DO JOGADOR {time[busca]['nome']} ')
-        for i, g in enumerate(time[busca]['gols']):
-            print(f'    No jogo {i+1} fez {g} gol(s)')
-print('<< VOLTE SEMPRE >>')
+# time = list()
+# jogador = dict()
+# partidas = list()
+# while True:
+#     jogador.clear()
+#     jogador['nome'] = str(input('Nome do Jogador: '))
+#     total = int(input(f'Quantas partidas {jogador['nome']}: '))
+#     for c in range(0,total):
+#         partidas.append(int(input(f'    Quantos gols na partida {c+1}: ')))
+#     jogador['gols'] = partidas[:]
+#     jogador['total'] = sum(partidas)
+#     time.append(jogador.copy())
+#     partidas.clear()
+#     while True:
+#         resposta = str(input('Deseja continuar (S/N) ?:')).upper()
+#         if resposta in 'SN':
+#             break
+#         print('ERRO!. Responda paenas S ou N')
+#     if resposta == 'N':
+#         break
+# print('-=' * 30)
+# print('cod ', end='')
+# for i in jogador.keys():
+#     print(f'{i:<20}', end='')
+# print()
+# print('--' * 30)
+# for k, v in enumerate(time):
+#     print(f'{k:>3} ', end='')
+#     for d in v.values():
+#         print(f'{str(d):<20}', end='')
+#     print()
+# print('--' * 30)
+# while True:
+#     busca = int(input('Mostrar dados de qual jogador (999 para parar): '))
+#     if busca == 999:
+#         break
+#     if busca >= len(time):
+#         print(f'Erro!. Não existe o jogador com o código {busca}!')
+#     else:
+#         print(f' -- LEVATAMENTO DO JOGADOR {time[busca]['nome']} ')
+#         for i, g in enumerate(time[busca]['gols']):
+#             print(f'    No jogo {i+1} fez {g} gol(s)')
+# print('<< VOLTE SEMPRE >>')
     
+# 38  Faça um programa que tenha uma função chamada área(), que recebe as dimensões de um terreno retangular (largura e comprimento) e mostre a área do terreno.
+
+def area_terreno(largura, comprimento):
+    area = largura * comprimento
+    print(f'A área de uma terreno {largura}x{comprimento} é de {area}m²' )
+
+print('Controle de Terrenos')
+print('-=' * 15)
+l = float(input('LARGURA (m): '))
+c= float(input('COMPRIMENTO (m): '))
+area_terreno(l, c)
+
+
+
