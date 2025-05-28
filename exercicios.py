@@ -787,17 +787,27 @@
 #             print(f'    No jogo {i+1} fez {g} gol(s)')
 # print('<< VOLTE SEMPRE >>')
     
-# 38  Faça um programa que tenha uma função chamada área(), que recebe as dimensões de um terreno retangular (largura e comprimento) e mostre a área do terreno.
+# 38 Faça um programa que tenha uma função chamada área(), que recebe as dimensões de um terreno retangular (largura e comprimento) e mostre a área do terreno.
 
-def area_terreno(largura, comprimento):
-    area = largura * comprimento
-    print(f'A área de uma terreno {largura}x{comprimento} é de {area}m²' )
+# def area_terreno(largura, comprimento):
+#     area = largura * comprimento
+#     print(f'A área de uma terreno {largura}x{comprimento} é de {area}m²' )
 
-print('Controle de Terrenos')
-print('-=' * 15)
-l = float(input('LARGURA (m): '))
-c= float(input('COMPRIMENTO (m): '))
-area_terreno(l, c)
+# print('Controle de Terrenos')
+# print('-=' * 15)
+# l = float(input('LARGURA (m): '))
+# c= float(input('COMPRIMENTO (m): '))
+# area_terreno(l, c)
 
+# 39 Faça um programa que tenha uma função chamada escreva(), que receba um texto qualquer como parâmetro e mostre uma mensagem com o tamanho adaptável.
+# Ex: escreva('Olá, Mundo!')
+# Saída: ~~~~~~~~~~~~~
+#         Olá, Mundo!
+#        ~~~~~~~~~~~~~ 
 
+def escreva(msg):
+    print(f'{"~" * (len(msg) + 4)}')
+    print(f'  {msg}')
+    print(f'{"~" * (len(msg) + 4)}')
 
+escreva('Olá, Mundo!')
