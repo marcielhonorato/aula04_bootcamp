@@ -818,36 +818,63 @@
 # B) De 10 até 0, de 2 em 2 
 # C) Uma contagem personalizada
 
-from time import sleep
+# from time import sleep
  
-def contador(ini:int, fim:int, passo:int):
-    if passo <0:
-        passo *= -1
-    if passo == 0:
-        passo = 1
-    print('-=' * 20)
-    print(f'Contagem de {ini} até {fim} de {passo} em {passo}')
-    sleep(2)
-    if ini < fim:
-        cont = ini
-        while cont <= fim:
-            print(f'{cont}', end=' ', flush=True)
-            sleep(0.5)
-            cont += passo
-        print('FIM!')
-    else:
-        cont = ini
-        while cont >= fim:
-            print(f'{cont}', end=' ', flush=True)
-            sleep(0.5)
-            cont -= passo
-        print('FIM!')    
+# def contador(ini:int, fim:int, passo:int):
+#     if passo <0:
+#         passo *= -1
+#     if passo == 0:
+#         passo = 1
+#     print('-=' * 20)
+#     print(f'Contagem de {ini} até {fim} de {passo} em {passo}')
+#     sleep(2)
+#     if ini < fim:
+#         cont = ini
+#         while cont <= fim:
+#             print(f'{cont}', end=' ', flush=True)
+#             sleep(0.5)
+#             cont += passo
+#         print('FIM!')
+#     else:
+#         cont = ini
+#         while cont >= fim:
+#             print(f'{cont}', end=' ', flush=True)
+#             sleep(0.5)
+#             cont -= passo
+#         print('FIM!')    
 
-contador(1, 10, 1)
-contador(10, 1, 1)
-print('-=' * 20)
-print("Agora é a sua vez de personaizar a contagem!")
-ini = int(input('Início:    '))
-fim = int(input('Fim:       '))
-passo = int(input('Passo:       '))
-contador(ini, fim, passo)
+# contador(1, 10, 1)
+# contador(10, 1, 1)
+# print('-=' * 20)
+# print("Agora é a sua vez de personaizar a contagem!")
+# ini = int(input('Início:    '))
+# fim = int(input('Fim:       '))
+# passo = int(input('Passo:       '))
+# contador(ini, fim, passo)
+
+# 41 Faça um programa que tenha uma função chamada maior(), que receba vários parâmetros com valores inteiros.
+# Seu programa tem que analisar todos os valores e dizer qual pe o maior.
+
+from time import sleep
+
+def maior(* num: int):
+    print('-=' * 30)
+    maior = cont = 0
+    print(f'Analisando os valores passados...')
+    for numero in num:
+        print(numero, end=' ', flush=True)
+        sleep(0.5)
+        if cont == 0:
+            maior = numero
+        else:
+            if numero > maior:
+                maior = numero
+        cont += 1
+    print(f'Foram informados {cont} ao todo.')
+    print(f'O maior valor informado foi {maior}.')     
+
+maior(91, 12, 8, 6, 35)
+maior(3, 2, 7, 11)
+maior(15, 18, 9, 3, 40, 21)
+maior(10, 21)
+maior()
