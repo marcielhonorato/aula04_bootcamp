@@ -855,26 +855,56 @@
 # 41 Faça um programa que tenha uma função chamada maior(), que receba vários parâmetros com valores inteiros.
 # Seu programa tem que analisar todos os valores e dizer qual pe o maior.
 
+# from time import sleep
+
+# def maior(* num: int):
+#     print('-=' * 30)
+#     maior = cont = 0
+#     print(f'Analisando os valores passados...')
+#     for numero in num:
+#         print(numero, end=' ', flush=True)
+#         sleep(0.5)
+#         if cont == 0:
+#             maior = numero
+#         else:
+#             if numero > maior:
+#                 maior = numero
+#         cont += 1
+#     print(f'Foram informados {cont} ao todo.')
+#     print(f'O maior valor informado foi {maior}.')     
+
+# maior(91, 12, 8, 6, 35)
+# maior(3, 2, 7, 11)
+# maior(15, 18, 9, 3, 40, 21)
+# maior(10, 21)
+# maior()
+
+# 42 Faça um programa que tenha uma lista chamada números e duas funções chamadas sorteia() e somaPar(). A primeira função vai sortear 5 números 
+# e vai colocá-los dentro de uma lista e a segunda função vai mostrar a soma entre todos os valores PARES sorteados pela função anterior.
+
+from random import randint
 from time import sleep
 
-def maior(* num: int):
-    print('-=' * 30)
-    maior = cont = 0
-    print(f'Analisando os valores passados...')
-    for numero in num:
-        print(numero, end=' ', flush=True)
-        sleep(0.5)
-        if cont == 0:
-            maior = numero
-        else:
-            if numero > maior:
-                maior = numero
-        cont += 1
-    print(f'Foram informados {cont} ao todo.')
-    print(f'O maior valor informado foi {maior}.')     
+def sorteia(lista):
+    print(f'Sorteando 5 valores da lista: ', end='', flush=True)
+    sleep(0.3)
+    for cont in range(0, 5):
+        numero = randint(0,10)
+        lista.append(numero)
+        print(f'{numero} ',end=' ', flush=True)
+        sleep(0.3)
+    print('Pronto!')
 
-maior(91, 12, 8, 6, 35)
-maior(3, 2, 7, 11)
-maior(15, 18, 9, 3, 40, 21)
-maior(10, 21)
-maior()
+def somaPar(lista):
+    soma_par = 0
+    for num in lista:
+        if num % 2 == 0:
+            soma_par += num
+    print(f'Somando os valores pares de {lista}, temos {soma_par}')
+
+lista_numero = list()
+sorteia(lista_numero)
+somaPar(lista_numero)
+
+
+
