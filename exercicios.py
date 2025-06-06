@@ -882,29 +882,49 @@
 # 42 Faça um programa que tenha uma lista chamada números e duas funções chamadas sorteia() e somaPar(). A primeira função vai sortear 5 números 
 # e vai colocá-los dentro de uma lista e a segunda função vai mostrar a soma entre todos os valores PARES sorteados pela função anterior.
 
-from random import randint
-from time import sleep
+# from random import randint
+# from time import sleep
 
-def sorteia(lista):
-    print(f'Sorteando 5 valores da lista: ', end='', flush=True)
-    sleep(0.3)
-    for cont in range(0, 5):
-        numero = randint(0,10)
-        lista.append(numero)
-        print(f'{numero} ',end=' ', flush=True)
-        sleep(0.3)
-    print('Pronto!')
+# def sorteia(lista):
+#     print(f'Sorteando 5 valores da lista: ', end='', flush=True)
+#     sleep(0.3)
+#     for cont in range(0, 5):
+#         numero = randint(0,10)
+#         lista.append(numero)
+#         print(f'{numero} ',end=' ', flush=True)
+#         sleep(0.3)
+#     print('Pronto!')
 
-def somaPar(lista):
-    soma_par = 0
-    for num in lista:
-        if num % 2 == 0:
-            soma_par += num
-    print(f'Somando os valores pares de {lista}, temos {soma_par}')
+# def somaPar(lista):
+#     soma_par = 0
+#     for num in lista:
+#         if num % 2 == 0:
+#             soma_par += num
+#     print(f'Somando os valores pares de {lista}, temos {soma_par}')
 
-lista_numero = list()
-sorteia(lista_numero)
-somaPar(lista_numero)
+# lista_numero = list()
+# sorteia(lista_numero)
+# somaPar(lista_numero)
+
+# 43 Crie um programa que tenha uma função cahamada voto() que vai receber como parâmetro o ano de nascimento de uma pessoa, retornando um valor 
+# literal indicando se a pessoa tem o voto NEGADO, OPCIONAL ou OBRIGATÓRIO nas eleições.
+
+def voto(ano_nascto : int):
+    from datetime import datetime as dt
+    idade = dt.now().year - ano_nascto   
+    if idade < 16:
+        return f'Com {idade} anos: NÃO VOTA.'
+    elif 16 <= idade < 18 or idade >= 65:
+        return f'Com {idade} anos: VOTO OPCIONAL.'
+    else:
+        return f'Com {idade} anos: VOTO OBRIGATÓRIO.'
+    
+print('-=' * 30)
+ano_nascto = int(input('Em que ano você nasceu?: '))
+print(voto(ano_nascto))
+
+
+ 
 
 
 
