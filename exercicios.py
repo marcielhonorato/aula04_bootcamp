@@ -909,22 +909,46 @@
 # 43 Crie um programa que tenha uma função cahamada voto() que vai receber como parâmetro o ano de nascimento de uma pessoa, retornando um valor 
 # literal indicando se a pessoa tem o voto NEGADO, OPCIONAL ou OBRIGATÓRIO nas eleições.
 
-def voto(ano_nascto : int):
-    from datetime import datetime as dt
-    idade = dt.now().year - ano_nascto   
-    if idade < 16:
-        return f'Com {idade} anos: NÃO VOTA.'
-    elif 16 <= idade < 18 or idade >= 65:
-        return f'Com {idade} anos: VOTO OPCIONAL.'
-    else:
-        return f'Com {idade} anos: VOTO OBRIGATÓRIO.'
+# def voto(ano_nascto : int):
+#     from datetime import datetime as dt
+#     idade = dt.now().year - ano_nascto   
+#     if idade < 16:
+#         return f'Com {idade} anos: NÃO VOTA.'
+#     elif 16 <= idade < 18 or idade >= 65:
+#         return f'Com {idade} anos: VOTO OPCIONAL.'
+#     else:
+
+#         return f'Com {idade} anos: VOTO OBRIGATÓRIO.
     
-print('-=' * 30)
-ano_nascto = int(input('Em que ano você nasceu?: '))
-print(voto(ano_nascto))
+# print('-=' * 30)
+# ano_nascto = int(input('Em que ano você nasceu?: '))
+# print(voto(ano_nascto))
+
+# 44 Crie um programa que tneha uma função fatorial() que recebe dois parâmetros: o primeiro que indique que o número a calcular e o outro chamado show, 
+# que será um valor lógico (opcional) indicando se será mostrado ou não na tela oprocesso de cálculo do fatorial.
+
+def fatorial(num_fatorial, show=False):
+    """
+    -> Calcula o Fatorial de um número.
+    :param num_fatorial : Número a ser calculado.
+    :param show : (opcional) Mostrar ou não a solução.
+    :return : O valor do Fatorial de um número num_fatorial.
+    """
+    total = 1
+    for num in range(num_fatorial, 0, -1):
+        total *= num
+        if show:
+            if num > 1:
+                print(f'{num} x ', end='')
+            else:
+                print(f'{num} = ', end='')
+    print(f'{total}')
+    return total
+fatorial(5)
 
 
- 
+
+
 
 
 
